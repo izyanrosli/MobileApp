@@ -20,8 +20,9 @@ export default class App extends Component{
       let x = this.state.word;
       let string = x.toLowerCase();
       let str = string.split(''); 
-        
-          for(let char of str) {
+
+      this.setState({word:str, consonants: 0, vowels:0}, () => {
+         for(let char of str) {
             if(char =='a' || char =='e' || char =='i' || char =='o' ||char=='u'){
 
               this.setState((prevState) => ({
@@ -34,6 +35,7 @@ export default class App extends Component{
                 consonants: prevState.consonants + 1
               }));
         }
+      });       
     
   }
 
